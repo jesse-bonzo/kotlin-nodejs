@@ -1,0 +1,24 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.7.22'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    implementation(npm("is-sorted", "1.0.5"))
+}
+
+kotlin {
+    js(IR) {
+        binaries.executable()
+        nodejs {
+
+        }
+    }
+}
